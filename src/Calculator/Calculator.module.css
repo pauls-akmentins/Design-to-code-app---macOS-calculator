@@ -10,7 +10,7 @@
   height: 500px;
   width: 350px;
   margin-top: 30px;
-  border: 1px solid #353839;
+  border: 1px solid #2c2d32;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -18,7 +18,7 @@
 .displayContainer {
   display: flex;
   justify-content: space-between;
-  background-color: #565656;
+  background-color: #2c2d32;
 }
 
 .calcResultContainer {
@@ -59,14 +59,14 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #353839;
+  border-top: 1px solid #2c2d32;
 }
 
 .calcActionsLastRow {
   height: 100%;
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #353839;
+  border-top: 1px solid #2c2d32;
 }
 
 .calcActionsLastRow div:nth-child(1) {

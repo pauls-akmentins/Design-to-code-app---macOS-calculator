@@ -1,0 +1,53 @@
+.topActionRowWrapper {
+  display: flex;
+  margin-top: 6px;
+  margin-left: 6px;
+  height: fit-content;
+}
+
+.circleButtonContainer {
+  margin-right: 8px;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.circleButtonContainer-close {
+  background-color: #ff6057;
+}
+
+.circleButtonContainer-minimize {
+  background-color: #fdbc2e;
+}
+
+.circleButtonContainer-expand {
+  background-color: #29c840;
+}
+
+.topActionRowWrapper:hover .circleButton {
+  opacity: 1;
+}
+
+.circleButton {
+  position: relative;
+  bottom: 4px;
+  left: 4px;
+  opacity: 1;
+  font-size: 14px;
+  opacity: 0;
+}
+
+.circleButton-close {
+  font-size: 13px;
+}
+
+.circleButton-expand {
+  left: 3px;
+}
+
+.circleButton-minimize {
+  font-size: 20px;
+  left: 3px;
+  bottom: 6px;
+}

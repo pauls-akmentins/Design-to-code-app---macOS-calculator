@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import styles from "./Calculator.module.css";
 import CalculatorTile from "../components/CalculatorTille/CalculatorTile";
-import CalculatorCirclesRow from "../components/CalculatorCirclesRow/CalculatorCirclesRow"; 
+import CalculatorCirclesRow from "../components/CalculatorCirclesRow/CalculatorCirclesRow";
 import { Action } from "./types";
 import { computeCalculatorAction } from "./utils";
 
