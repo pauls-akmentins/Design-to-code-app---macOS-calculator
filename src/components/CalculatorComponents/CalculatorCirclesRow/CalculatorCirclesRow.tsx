@@ -5,8 +5,9 @@ import { getCircleType } from "./utls";
 
 const CalculatorCirclesRow: React.FC = () => (
   <div className={classNames(styles.topActionRowWrapper)}>
-    {Object.values(CircleType).map((circleType) => (
+    {Object.values(CircleType).map((circleType, i) => (
       <div
+        key={`${circleType}-${i}`}
         className={classNames(
           styles.circleButtonContainer,
           styles[`circleButtonContainer-${circleType}`]
