@@ -1,1 +1,3 @@
-## This is small Github repo with apps and training projects I do in my spare time
+## This is small GitHub repo with apps, 
+## which I developed with purpose to test different
+## libraries and packages and keep myself busy
