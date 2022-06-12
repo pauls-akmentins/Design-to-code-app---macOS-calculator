@@ -1,0 +1,83 @@
+.calcuMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calcContainer {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 350px;
+  margin-top: 30px;
+  border: 1px solid #353839;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.displayContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #565656;
+}
+
+.calcResultContainer {
+  height: 130px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: white;
+}
+
+.calcResultContainer-withAction {
+  justify-content: flex-start;
+}
+
+.calCurrent {
+  font-size: 52px;
+  padding-right: 12px;
+  padding-bottom: 6px;
+}
+
+.calcPrevious {
+  font-size: 28px;
+  padding-right: 12px;
+  padding-top: 6px;
+}
+
+.calcActionsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border-collapse: separate;
+}
+
+.calcActionsRow {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #353839;
+}
+
+.calcActionsLastRow {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #353839;
+}
+
+.calcActionsLastRow div:nth-child(1) {
+  flex: 2 1 0;
+  padding-right: 1px;
+}
+
+.calcActionsLastRow div:nth-child(2) {
+  flex: 1 1 0;
+}
+
+.calcActionsLastRow div:nth-child(3) {
+  flex: 1 1 0;
+}
