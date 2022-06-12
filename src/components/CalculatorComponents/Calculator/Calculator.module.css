@@ -21,32 +21,6 @@
   background-color: #2c2d32;
 }
 
-.calcResultContainer {
-  height: 130px;
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  flex-direction: column;
-  color: white;
-}
-
-.calcResultContainer-withAction {
-  justify-content: flex-start;
-}
-
-.calCurrent {
-  font-size: 52px;
-  padding-right: 12px;
-  padding-bottom: 6px;
-}
-
-.calcPrevious {
-  font-size: 28px;
-  padding-right: 12px;
-  padding-top: 6px;
-}
-
 .calcActionsContainer {
   display: flex;
   flex-direction: column;

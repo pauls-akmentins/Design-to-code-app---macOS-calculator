@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Calculator from "./Calculator/Calculator";
+import Calculator from "./components/CalculatorComponents/Calculator/Calculator";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

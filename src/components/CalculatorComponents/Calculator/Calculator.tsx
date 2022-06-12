@@ -1,21 +1,16 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import styles from "./Calculator.module.css";
-import CalculatorTile from "../components/CalculatorTille/CalculatorTile";
-import CalculatorCirclesRow from "../components/CalculatorCirclesRow/CalculatorCirclesRow";
+import CalculatorTile from "../CalculatorTile/CalculatorTile";
+import CalculatorCirclesRow from "../CalculatorCirclesRow/CalculatorCirclesRow";
 import { Action } from "./types";
 import { computeCalculatorAction } from "./utils";
+import CalculatorDisplay from "../CalculatorDisplay/CalculatorDisplay";
 
 const Calculator: React.FC = () => {
   const [prevNumber, setPrevNumber] = useState<string>("");
   const [currentNumber, setCurrentNumber] = useState<string>("0");
   const [action, setAction] = useState<Action | undefined>(undefined);
-
-  const handleClear = () => {
-    setCurrentNumber("0");
-    setPrevNumber("");
-    setAction(undefined);
-  };
 
   const handleNumber = (pressedNumber: string) => {
     if (pressedNumber === "." && currentNumber.includes(".")) return;
@@ -34,17 +29,6 @@ const Calculator: React.FC = () => {
     setCurrentNumber("");
   };
 
-  const computeNumber = () => {
-    const result = computeCalculatorAction(
-      prevNumber,
-      currentNumber,
-      action as Action
-    );
-    setCurrentNumber(String(result));
-    setPrevNumber("");
-    setAction(undefined);
-  };
-
   const handlePlusMinus = () => {
     if (Math.sign(parseFloat(currentNumber)) === 1) {
       setCurrentNumber("-" + currentNumber);
@@ -58,38 +42,49 @@ const Calculator: React.FC = () => {
     setCurrentNumber(String(percentages));
   };
 
+  const computeNumber = () => {
+    const result = computeCalculatorAction(
+      prevNumber,
+      currentNumber,
+      action as Action
+    );
+    setCurrentNumber(String(result));
+    setPrevNumber("");
+    setAction(undefined);
+  };
+
+  const handleClear = () => {
+    setCurrentNumber("0");
+    setPrevNumber("");
+    setAction(undefined);
+  };
+
   return (
     <div className={classNames(styles.calcuMain)}>
       <div className={classNames(styles.calcContainer)}>
         <div className={classNames(styles.displayContainer)}>
           <CalculatorCirclesRow />
-          <div
-            className={classNames(
-              styles.calcResultContainer,
-              action && styles["calcResultContainer-withAction"]
-            )}
-          >
-            {prevNumber !== "" && (
-              <span className={classNames(styles.calcPrevious)}>
-                {`${prevNumber} ` + action}
-              </span>
-            )}
-            {currentNumber !== "" && (
-              <span className={classNames(styles.calCurrent)}>
-                {currentNumber}
-              </span>
-            )}
-          </div>
+          <CalculatorDisplay
+            action={action}
+            prevNumber={prevNumber}
+            currentNumber={currentNumber}
+          />
         </div>
         <div className={classNames(styles.calcActionsContainer)}>
           <div className={classNames(styles.calcActionsRow)}>
             <CalculatorTile backgroundColor="darkGrey" onClick={handleClear}>
               {currentNumber !== "0" || prevNumber.length ? "AC" : "C"}
             </CalculatorTile>
-            <CalculatorTile backgroundColor="darkGrey" onClick={handlePlusMinus}>
+            <CalculatorTile
+              backgroundColor="darkGrey"
+              onClick={handlePlusMinus}
+            >
               +/-
             </CalculatorTile>
-            <CalculatorTile backgroundColor="darkGrey" onClick={handlePercentages}>
+            <CalculatorTile
+              backgroundColor="darkGrey"
+              onClick={handlePercentages}
+            >
               %
             </CalculatorTile>
             <CalculatorTile
