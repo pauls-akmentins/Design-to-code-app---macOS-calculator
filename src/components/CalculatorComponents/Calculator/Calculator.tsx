@@ -56,6 +56,7 @@ const Calculator: React.FC = () => {
       currentNumber,
       action as Action
     );
+    /** TODO - Resolve issue with state not changing */
     setCurrentNumber(String(result));
     setPrevNumber("");
     setAction(undefined);
