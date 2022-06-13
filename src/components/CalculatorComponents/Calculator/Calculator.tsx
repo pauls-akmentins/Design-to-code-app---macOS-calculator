@@ -11,11 +11,16 @@ const Calculator: React.FC = () => {
   const [prevNumber, setPrevNumber] = useState<string>("");
   const [currentNumber, setCurrentNumber] = useState<string>("0");
   const [action, setAction] = useState<Action | undefined>(undefined);
+  const [isCalculatorTouched, setIsCalculatorTouched] =
+    useState<boolean>(false);
 
   const handleNumber = (pressedNumber: string) => {
+    setIsCalculatorTouched(true);
     if (pressedNumber === "." && currentNumber.includes(".")) return;
     const newCurrentNumber =
-      currentNumber === "0" ? pressedNumber : currentNumber + pressedNumber;
+      currentNumber === "0" && !isCalculatorTouched
+        ? pressedNumber
+        : currentNumber + pressedNumber;
     setCurrentNumber(newCurrentNumber);
   };
 
@@ -43,6 +48,9 @@ const Calculator: React.FC = () => {
   };
 
   const computeNumber = () => {
+    if (isNaN(parseFloat(prevNumber)) || isNaN(parseFloat(currentNumber)))
+      return;
+
     const result = computeCalculatorAction(
       prevNumber,
       currentNumber,
@@ -57,6 +65,7 @@ const Calculator: React.FC = () => {
     setCurrentNumber("0");
     setPrevNumber("");
     setAction(undefined);
+    setIsCalculatorTouched(false);
   };
 
   return (

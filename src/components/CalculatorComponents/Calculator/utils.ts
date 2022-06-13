@@ -9,8 +9,6 @@ export const computeCalculatorAction = (
   const prevOperand = parseFloat(prevNumber);
   const currOperand = parseFloat(currentNumber);
 
-  if (isNaN(prevOperand) || isNaN(currOperand)) return;
-
   switch (action) {
     case "+": {
       result = prevOperand + currOperand;
