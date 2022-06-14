@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import styles from "./Calculator.module.css";
 import CalculatorTile from "../CalculatorTile/CalculatorTile";
@@ -56,10 +56,13 @@ const Calculator: React.FC = () => {
       currentNumber,
       action as Action
     );
-    /** TODO - Resolve issue with state not changing */
+    /** TODO:
+     *  Resolve issue with state not changing,
+     *  this does not get set when changing value
+     */
     setCurrentNumber(String(result));
-    setPrevNumber("");
     setAction(undefined);
+    setPrevNumber("");
   };
 
   const handleClear = () => {
