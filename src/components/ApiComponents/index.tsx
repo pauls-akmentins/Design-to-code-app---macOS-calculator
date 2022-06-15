@@ -8,7 +8,12 @@ const ApiPosts: React.FC = () => {
   const fetchPostsApi = () => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((res) => res.json())
-      .then((data) => setPostsData(data.slice(0, 10)));
+      .then((data: Post[]) => {
+        const filteredData = data
+          .filter(({ title }) => title.length < 30)
+          .slice(0, 10);
+        setPostsData(filteredData);
+      });
   };
 
   useEffect(() => {
