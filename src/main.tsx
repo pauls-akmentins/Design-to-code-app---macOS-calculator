@@ -1,5 +1,5 @@
 import Blog from "./components/Blog";
-import Calculator from "./components/Calculator/Calculator/Calculator";
+import Calculator from "./components/Calculator";
 import WelcomeBanner from "./components/shared/WelcomeBanner";
 import AppContainer from "./components/shared/AppContainer";
 

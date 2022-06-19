@@ -1,4 +1,4 @@
-import { Action } from "../Calculator/types";
+import { Action } from "../types";
 
 export interface CalculatorDisplayProps {
   action?: Action;

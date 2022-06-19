@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import styles from "./Calculator.module.css";
-import CalculatorTile from "../CalculatorTile/CalculatorTile";
-import CalculatorCirclesRow from "../CalculatorCirclesRow/CalculatorCirclesRow";
+import CalculatorTile from "./CalculatorTile/CalculatorTile";
+import CalculatorCirclesRow from "./CalculatorCirclesRow/CalculatorCirclesRow";
 import { Action } from "./types";
 import { computeCalculatorAction } from "./utils";
-import CalculatorDisplay from "../CalculatorDisplay/CalculatorDisplay";
+import CalculatorDisplay from "./CalculatorDisplay/CalculatorDisplay";
 
 const Calculator: React.FC = () => {
   const [prevNumber, setPrevNumber] = useState<string>("");
