@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import Posts from "./Posts/Posts";
 import SinglePost from "./SinglePost/SinglePost";
 import { Post } from "./types";
 
-const ApiPosts: React.FC = () => {
+const Blog: React.FC = () => {
   const [postsData, setPostsData] = useState<Post[]>([]);
 
   const fetchPostsApi = () => {
@@ -11,7 +12,7 @@ const ApiPosts: React.FC = () => {
       .then((data: Post[]) => {
         const filteredData = data
           .filter(({ title }) => title.length < 30)
-          .slice(0, 10);
+          .slice(0, 5);
         setPostsData(filteredData);
       });
   };
@@ -21,12 +22,12 @@ const ApiPosts: React.FC = () => {
   }, []);
 
   return (
-    <>
+    <Posts>
       {postsData.length > 0
         ? postsData.map((post) => <SinglePost key={post.id} {...post} />)
         : null}
-    </>
+    </Posts>
   );
 };
 
-export default ApiPosts;
+export default Blog;
