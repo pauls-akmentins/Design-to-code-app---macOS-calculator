@@ -10,7 +10,7 @@ const WelcomeBanner = () => {
       <span className={classNames(styles.welcomeDescription)}>
         This page contains various small projects I worked on to with the
         purpose learn and strengthen my knowledge in different technologies and
-        coding practises.
+        coding practices.
       </span>
     </div>
   );
