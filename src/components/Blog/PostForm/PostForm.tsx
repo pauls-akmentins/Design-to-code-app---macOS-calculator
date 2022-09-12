@@ -26,7 +26,6 @@ const PostForm: React.FC<{ posts: PostValues[] }> = ({ posts }) => {
       },
     ];
     dispatch<any>(saveCartData(newPosts)).finally(() => {
-      console.log("form reinitialized");
       resetForm({ values: initialValues });
     });
   };
@@ -44,6 +43,7 @@ const PostForm: React.FC<{ posts: PostValues[] }> = ({ posts }) => {
               id="post_author"
               name="post_author"
               label="author"
+              value={values.post_author}
               onChange={handleChange}
               component={TextField}
               onBlur={handleBlur}
@@ -52,6 +52,7 @@ const PostForm: React.FC<{ posts: PostValues[] }> = ({ posts }) => {
               id="post_title"
               name="post_title"
               label="post title"
+              value={values.post_title}
               onChange={handleChange}
               component={TextField}
               onBlur={handleBlur}
@@ -62,6 +63,7 @@ const PostForm: React.FC<{ posts: PostValues[] }> = ({ posts }) => {
               label="post body"
               multiline
               rows={4}
+              value={values.post_body}
               onChange={handleChange}
               component={TextField}
               onBlur={handleBlur}

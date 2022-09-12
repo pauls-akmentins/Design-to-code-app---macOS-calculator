@@ -1,9 +1,13 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 import Button from "@mui/material/Button";
 
-import { fetchCartData, saveCartData } from "../../store/posts";
+import {
+  fetchCartData,
+  increaseVisiblePosts,
+  saveCartData,
+} from "../../store/posts";
 import {
   selectPostData,
   selectPostDataCount,
@@ -67,19 +71,26 @@ const Blog: React.FC = () => {
         ) : null}
       </div>
       {showPosts && posts.length ? (
-        <Posts>
-          {posts.slice(0, showPostsCount).map((post) => (
-            <SinglePost
-              key={post.post_id}
-              post_id={post.post_id}
-              post_author={post.post_author}
-              post_title={post.post_title}
-              post_body={post.post_body}
-              post_date={post.post_date}
-              handleRemovePost={handleRemovePost}
-            />
-          ))}
-        </Posts>
+        <>
+          <Posts>
+            {posts.slice(0, showPostsCount).map((post) => (
+              <SinglePost
+                key={post.post_id}
+                post_id={post.post_id}
+                post_author={post.post_author}
+                post_title={post.post_title}
+                post_body={post.post_body}
+                post_date={post.post_date}
+                handleRemovePost={handleRemovePost}
+              />
+            ))}
+          </Posts>
+          {showPostsCount < posts.length ? (
+            <Button onClick={() => dispatch(increaseVisiblePosts())}>
+              Show More
+            </Button>
+          ) : null}
+        </>
       ) : (
         <PostForm posts={posts} />
       )}

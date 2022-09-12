@@ -21,7 +21,7 @@ export const postsSlice = createSlice({
   },
 });
 
-export const { replacePosts } = postsSlice.actions;
+export const { replacePosts, increaseVisiblePosts } = postsSlice.actions;
 
 export const saveCartData = (posts: PostValues[]) => {
   return (dispatch) => {
