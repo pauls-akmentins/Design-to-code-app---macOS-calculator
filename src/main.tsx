@@ -7,10 +7,16 @@ const Main: React.FC = () => {
   return (
     <>
       <WelcomeBanner />
-      <AppContainer appName="macOS calculator replica" appDescription="TO DO">
+      <AppContainer
+        appName="macOS calculator replica"
+        appDescription="reuse of logic and color schema for macOS calculator"
+      >
         <Calculator />
       </AppContainer>
-      <AppContainer appName="simple blog type app" appDescription="TO DO">
+      <AppContainer
+        appName="simple 'blog' type app"
+        appDescription="used together with firebase database and Redux"
+      >
         <Blog />
       </AppContainer>
     </>

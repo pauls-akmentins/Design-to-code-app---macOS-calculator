@@ -1,14 +1,10 @@
-import { configureStore, Store, combineReducers } from "@reduxjs/toolkit";
-import commentsReducer from "./comments/reducers";
-import postsReducer from "./posts/reducers";
+import { configureStore, Store } from "@reduxjs/toolkit";
+import { commentsSlice } from "./comments";
+import { postsSlice } from "./posts";
 
-const combinedReducers = combineReducers({
-  posts: postsReducer,
-  comments: commentsReducer,
+export const store: Store<any, any> = configureStore({
+  reducer: {
+    comments: commentsSlice.reducer,
+    posts: postsSlice.reducer
+  },
 });
-
-const store: Store<any, any> = configureStore({
-  reducer: combinedReducers,
-});
-
-export default store;

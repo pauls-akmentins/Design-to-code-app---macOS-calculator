@@ -1,7 +1,5 @@
 .innerPostsContainer {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  margin: 0 auto;
-  width: 1300px;
+  justify-content: center;
 }
