@@ -18,10 +18,16 @@ export const postsSlice = createSlice({
     increaseVisiblePosts: (state) => {
       state.postsToShow += 3;
     },
+    decreaseVisiblePosts: (state) => {
+      if (state.postsToShow <= 3) {
+        return;
+      }
+      state.postsToShow -= 3;
+    },
   },
 });
 
-export const { replacePosts, increaseVisiblePosts } = postsSlice.actions;
+export const { replacePosts, increaseVisiblePosts, decreaseVisiblePosts } = postsSlice.actions;
 
 export const saveCartData = (posts: PostValues[]) => {
   return (dispatch) => {

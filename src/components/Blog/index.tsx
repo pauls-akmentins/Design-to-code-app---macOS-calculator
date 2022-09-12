@@ -4,6 +4,7 @@ import classNames from "classnames";
 import Button from "@mui/material/Button";
 
 import {
+  decreaseVisiblePosts,
   fetchCartData,
   increaseVisiblePosts,
   saveCartData,
@@ -85,11 +86,18 @@ const Blog: React.FC = () => {
               />
             ))}
           </Posts>
-          {showPostsCount < posts.length ? (
-            <Button onClick={() => dispatch(increaseVisiblePosts())}>
-              Show More
-            </Button>
-          ) : null}
+          <Stack flexDirection="row">
+            {showPostsCount !== 3 ? (
+              <Button onClick={() => dispatch(decreaseVisiblePosts())}>
+                Show Less
+              </Button>
+            ) : null}
+            {showPostsCount < posts.length ? (
+              <Button onClick={() => dispatch(increaseVisiblePosts())}>
+                Show More
+              </Button>
+            ) : null}
+          </Stack>
         </>
       ) : (
         <PostForm posts={posts} />
