@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { PostValues } from "../../components/Blog/types";
+import { PostValues } from "../../components/Apps/Blog/types";
 import { PostsSlice } from "./types";
 
 const initialState: PostsSlice = {

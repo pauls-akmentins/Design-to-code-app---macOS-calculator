@@ -8,12 +8,12 @@ import {
   fetchCartData,
   increaseVisiblePosts,
   saveCartData,
-} from "../../store/posts";
+} from "../../../store/posts";
 import {
   selectPostData,
   selectPostDataCount,
-} from "../../store/posts/selectors";
-import { RootState } from "../../store/types";
+} from "../../../store/posts/selectors";
+import { RootState } from "../../../store/types";
 
 import SinglePost from "./SinglePost/SinglePost";
 import styles from "./Blog.module.css";

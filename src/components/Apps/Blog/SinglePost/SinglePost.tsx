@@ -12,7 +12,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { blue } from "@mui/material/colors";
 
 import { PostValues } from "../types";
-import { formatDate } from "../../shared/utils";
+import { formatDate } from "../../../../shared/utils";
 import { Button, Stack } from "@mui/material";
 
 const SinglePost: React.FC<

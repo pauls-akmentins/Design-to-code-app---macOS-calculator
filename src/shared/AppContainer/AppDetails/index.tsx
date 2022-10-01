@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import styles from "./AppDescription.module.css";
+import styles from "./AppDetails.module.css";
 
 const AppTitle: React.FC<{ appName: string; appDescription: string }> = ({
   appName,

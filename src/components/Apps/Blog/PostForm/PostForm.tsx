@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import { Formik, Field, FormikHelpers } from "formik";
 
 import { PostValues } from "../types";
-import { saveCartData } from "../../../store/posts";
+import { saveCartData } from "../../../../store/posts";
 import { initialValues } from "../utils";
 
 const PostForm: React.FC<{ posts: PostValues[] }> = ({ posts }) => {

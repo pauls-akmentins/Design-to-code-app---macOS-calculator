@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import classNames from "classnames";
 
 import styles from "./AppContainer.module.css";
-import AppTitle from "../AppDescription";
+import AppDetails from "./AppDetails";
 
 interface Props {
   children: ReactNode;
@@ -17,7 +17,7 @@ const AppContainer: React.FC<Props> = ({
 }) => {
   return (
     <div className={classNames(styles.appContainer)}>
-      <AppTitle appName={appName} appDescription={appDescription} />
+      <AppDetails appName={appName} appDescription={appDescription} />
       {children}
     </div>
   );

@@ -1,4 +1,4 @@
-import { PostValues } from "../../components/Blog/types";
+import { PostValues } from "../../components/Apps/Blog/types";
 
 export interface PostsSlice {
   posts: PostValues[];
