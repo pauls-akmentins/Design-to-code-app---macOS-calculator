@@ -4,8 +4,7 @@ import { CircleType } from "./types";
 import { getCircleType } from "./utls";
 
 const CalculatorCirclesRow: React.FC = () => {
-  const handleClick = (circleType: CircleType) =>
-    alert("Just a dummy button, what else you expected?");
+  const handleClick = () => alert("Just a dummy button, what else you expected?");
 
   return (
     <div className={classNames(styles.topActionRowWrapper)}>
@@ -16,14 +15,9 @@ const CalculatorCirclesRow: React.FC = () => {
             styles.circleButtonContainer,
             styles[`circleButtonContainer-${circleType}`]
           )}
-          onClick={() => handleClick(circleType)}
+          onClick={handleClick}
         >
-          <span
-            className={classNames(
-              styles.circleButton,
-              styles[`circleButton-${circleType}`]
-            )}
-          >
+          <span className={classNames(styles.circleButton, styles[`circleButton-${circleType}`])}>
             {getCircleType(circleType)}
           </span>
         </div>
